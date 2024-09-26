@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db = 'olx_db'; // Replace with your actual database name
-$user = 'root'; // Replace with your MySQL username
-$pass = 'Kenc1k06'; // Replace with your MySQL password
+$db = 'olx_db'; 
+$user = 'root'; 
+$pass = 'Kenc1k06'; 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -38,7 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['user_role'] = $user['role'];
 
                 echo "Login successful! Welcome, " . $_SESSION['user_name'];
-                header("Location: index.php");
+
+                if ($user['role'] === 'admin') {
+                    header("Location: admin.php");
+                } else {
+                    header("Location: index.php");
+                }
                 exit();
             } else {
                 echo "Invalid password.";
@@ -49,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
