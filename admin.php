@@ -72,6 +72,7 @@ $products = $stmt_products->fetchAll();
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
+                    
                 </div>
                 <div class="sidebar-brand-text mx-3">Admin Page</div>
             </a>
@@ -112,7 +113,7 @@ $products = $stmt_products->fetchAll();
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                            <!-- <th>Password</th> -->
                             <th>Role</th>
                             <th>Actions</th>
                         </tr>
@@ -123,7 +124,7 @@ $products = $stmt_products->fetchAll();
                                 <td><?= $user['id']; ?></td>
                                 <td><?= $user['name']; ?></td>
                                 <td><?= $user['email']; ?></td>
-                                <td><?= $user['password']; ?></td>
+                                <!-- <td><?= $user['password']; ?></td> -->
                                 <td><?= $user['role']; ?></td>
                                 <td>
                                     <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal<?= $user['id']; ?>">
@@ -159,7 +160,7 @@ $products = $stmt_products->fetchAll();
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input type="text" name="password" class="form-control" value="<?= $user['password']; ?>" required>
+                                                    <input type="text" name="password" class="form-control" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Role</label>
